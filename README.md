@@ -1,3 +1,3 @@
 # worlds-worst-calculator
 
-#github pages link - https://relcnob.github.io/worlds_worst_calculator/
+GitHub pages link - https://relcnob.github.io/worlds_worst_calculator/
