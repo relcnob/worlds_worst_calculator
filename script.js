@@ -1,11 +1,37 @@
 const calculateBtn = document.querySelector("#calculate");
+const resultList = document.querySelector("#results");
 
 calculateBtn.addEventListener("click", runCalculation);
 
 function runCalculation() {
-  console.log(document.querySelector("#firstnumber").value);
-  console.log(document.querySelector("#operator").value);
-  console.log(document.querySelector("#secondnumber").value);
-  console.log(document.querySelector("#doround").value);
-  console.log(document.querySelector("#decimals").value);
+  let firstNumber = document.querySelector("#firstnumber").value;
+  let secondNumber = document.querySelector("#secondnumber").value;
+  let operator = document.querySelector("#operator").value;
+  let doRounding = document.querySelector("#doround").checked;
+  let decimals = document.querySelector("#decimals").value;
+  let outcome;
+
+  // check for operator
+  if (operator == "add") {
+    outcome = Number(firstNumber) + Number(secondNumber);
+    setValue(outcome);
+  } else if (operator == "sub") {
+    outcome = Number(firstNumber) - Number(secondNumber);
+    setValue(outcome);
+  } else if (operator == "mul") {
+    outcome = Number(firstNumber) * Number(secondNumber);
+    setValue(outcome);
+  } else if (operator == "div") {
+    outcome = Number(firstNumber) / Number(secondNumber);
+    setValue(outcome);
+  }
+  function setValue(e) {
+    if ((doRounding = "true")) {
+      document.querySelector("#firstnumber").value = e.toFixed(decimals);
+      document.querySelector("#secondnumber").value = "";
+    } else {
+      document.querySelector("#firstnumber").value = e;
+      document.querySelector("#secondnumber").value = "";
+    }
+  }
 }
